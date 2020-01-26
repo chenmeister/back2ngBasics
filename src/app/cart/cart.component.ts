@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 import { Product } from '../interfaces/product';
+import { Customer } from '../interfaces/customer';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -27,7 +28,7 @@ export class CartComponent implements OnInit {
     });
   }
 
-  onSubmit(customerData) {
+  onSubmit(customerData: Customer) {
     // Process checkout data here
     console.warn('Your order has been submitted', customerData);
 
