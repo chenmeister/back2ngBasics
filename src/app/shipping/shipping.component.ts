@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Shipping } from '../interfaces/shipping';
 import { CartService } from '../cart.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { CartService } from '../cart.service';
   styleUrls: ['./shipping.component.css']
 })
 export class ShippingComponent implements OnInit {
-  shippingCosts;
+  shippingCosts: Shipping;
 
   constructor(
     private cartService: CartService

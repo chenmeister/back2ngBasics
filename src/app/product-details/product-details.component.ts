@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { Product } from '../interfaces/product';
 import { products } from '../products';
 import { CartService } from '../cart.service';
 
@@ -10,7 +11,7 @@ import { CartService } from '../cart.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
-  product;
+  product: Product;
 
   constructor(
     private route: ActivatedRoute,
