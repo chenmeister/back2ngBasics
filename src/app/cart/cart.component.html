@@ -9,21 +9,25 @@
   <span>{{ item.price | currency }}</span>
 </div>
 
-<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+<div *ngIf="items.length == 0">
+  <h1>Your cart is empty!</h1>
+</div>
+
+<form *ngIf="items.length > 0" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
   
   <div>
     <label for="name">
       Name
     </label>
-    <input id="name" type="text" formControlName="name">
+    <input id="name" type="text" formControlName="name" required>
   </div>
 
   <div>
     <label for="address">
       Address
     </label>
-    <input id="address" type="text" formControlName="address">
+    <input id="address" type="text" formControlName="address" required>
   </div>
   
-  <button class="button" type="submit">Purchase</button>
+  <button class="button" type="submit" [disabled]="!checkoutForm.valid">Purchase</button>
 </form>
